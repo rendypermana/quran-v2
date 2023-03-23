@@ -1,0 +1,47 @@
+$grey: #F8F8F8;
+$white: #FFFFFF;
+$regularFont: #6B6C7E;
+$regularLight: #d1d1d1;
+$thickfont: #151522;
+$bluePersib: #4882F7;
+$blueXtc: #EBF2FF;
+$default: #B2B2B2;
+
+$main: #672CBC;
+$second: #8b3cfa;
+$mainfont: #240F4F;
+$secondfont: #8789A3;
+$orange: #F9B091;
+$colorfont: #863ED5;
+
+@mixin breakpoint($point) {
+  @if $point==widescreen {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $point==desktop {
+    @media (min-width: 900px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point==tablet {
+    @media (min-width: 768px) and (max-width: 899px) {
+      @content;
+    }
+  } @else if $point==mobileonly {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point==extrasmall {
+    @media (min-width: 320px) and (max-width: 479px) {
+      @content;
+    }
+  } @else if $point==tabletAbove {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $point==desktopAbove {
+    @media (min-width: 900px) {
+      @content;
+    }
+  }
+}
